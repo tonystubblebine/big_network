@@ -1,0 +1,24 @@
+This is a first pass at extracting the CrowdVine relationship code and making it usable for Rails 3. I'm not even using this in production, so I don't see why you would.
+
+== Assumptions:
+ * current_user and require_user
+
+== Instructions
+ * rake big_network:generate:migration 
+
+== Usage
+  * Add links
+    <%= render "relationships/create", :user => current_user, :with_user => user %>
+ 
+  * routes
+  resources :users do 
+    resources :relationships
+  end
+
+== Todo
+ * handle notifications
+ * config relationships: follow, following, followed
+ * don't re-notifiy on follow-unfollow-follow
+ * unfollow feature
+ * allow multiple relationship types at once
+ * confirmation
