@@ -9,8 +9,8 @@
 
 <% @relationships.each do |relationship| %>
   <tr>
-    <td><%= @relationship.user.name %></td>
-    <td><%= @relationship.with_user.name %></td> 
+    <td><%= relationship.user.name %></td>
+    <td><%= relationship.with_user.name %></td> 
   </tr>
 <% end %>
 </table>

@@ -1,12 +1,20 @@
 This is a first pass at extracting the CrowdVine relationship code and making it usable for Rails 3. I'm not even using this in production, so I don't see why you would.
 
 == Assumptions:
- * current_user and require_user
+ * current_user
+ * controller.require_user
+ * controller.require_super_user
+ * controller.render_error(404)
+ * current_user.super_user?
 
 == Instructions
  * rake big_network:generate:migration 
 
 == Usage
+  * Associations in User
+    has_many :relationships
+    has_many :friends, :class_name => "User", :through => :relationships, :source => "with_user"
+
   * Add links
     <%= render "relationships/create", :user => current_user, :with_user => user %>
  
@@ -22,3 +30,4 @@ This is a first pass at extracting the CrowdVine relationship code and making it
  * unfollow feature
  * allow multiple relationship types at once
  * confirmation
+
