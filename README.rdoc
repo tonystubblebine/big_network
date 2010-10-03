@@ -31,3 +31,6 @@ This is a first pass at extracting the CrowdVine relationship code and making it
  * allow multiple relationship types at once
  * confirmation
 
+== Contact
+ 
+Tony Stubblebine, tony@tonystubblebine.com. @tonystubblebine
