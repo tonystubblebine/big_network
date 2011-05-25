@@ -1,0 +1,11 @@
+pkg/
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+config/database.yml
+config.old
+Gemfile.lock
+test/rails_root/Gemfile.lock
+doc/
+*~
