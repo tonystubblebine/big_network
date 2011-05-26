@@ -9,8 +9,8 @@ class Relationship < ActiveRecord::Base
     # for now this just finds and list of users, but eventually we'll want to do something intelligent
     User.find(:all,
               :conditions => [ "users.id not in (?)", 
-                               user.friends.empty? ? user.id : (user.friends.map{|a| a.id} << user.id) ],
-              :order => "login")
+                               user.friends.empty? ? user.id : (user.friends.map{|a| a.id} << user.id) ]
+              ).sort{|a,b| a.name <=> b.name }
   end
 
 end
